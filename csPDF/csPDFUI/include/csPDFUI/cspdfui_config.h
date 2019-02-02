@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFUI_CONFIG_H__
-#define __CSPDFUI_CONFIG_H__
+#ifndef CSPDFUI_CONFIG_H
+#define CSPDFUI_CONFIG_H
 
 #include <QtCore/QtGlobal>
 
@@ -40,4 +40,4 @@
 # define CS_PDFUI_EXPORT  Q_DECL_IMPORT
 #endif
 
-#endif // __CSPDFUI_CONFIG_H__
+#endif // CSPDFUI_CONFIG_H

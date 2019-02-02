@@ -114,7 +114,7 @@ csPdfUiDocumentViewConfig csPdfUiDocumentView::_cfg;
 
 csPdfUiDocumentView::csPdfUiDocumentView(QWidget *parent)
   : QGraphicsView(parent)
-  , _scene(0)
+  , _scene(nullptr)
   , _doc()
   , _page()
   , _zoom(ZOOM_INIT)
@@ -641,7 +641,7 @@ void csPdfUiDocumentView::selectArea(QRect rect, QPointF fromScene, QPointF toSc
 bool csPdfUiDocumentView::followLink(const QPointF& scenePos)
 {
   foreach (QGraphicsItem *item, _scene->items(scenePos)) {
-    if( item == 0  ||  itemId(item) != LinkId ) {
+    if( item == nullptr  ||  itemId(item) != LinkId ) {
       continue;
     }
 

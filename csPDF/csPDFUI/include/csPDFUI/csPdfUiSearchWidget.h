@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFUISEARCHWIDGET_H__
-#define __CSPDFUISEARCHWIDGET_H__
+#ifndef CSPDFUISEARCHWIDGET_H
+#define CSPDFUISEARCHWIDGET_H
 
 #include <QtWidgets/QWidget>
 
@@ -44,7 +44,7 @@ namespace Ui {
 class CS_PDFUI_EXPORT csPdfUiSearchWidget : public QWidget {
   Q_OBJECT
 public:
-  csPdfUiSearchWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);
+  csPdfUiSearchWidget(QWidget *parent = nullptr, Qt::WindowFlags f = 0);
   ~csPdfUiSearchWidget();
 
   void setDocument(const csPDFiumDocument& doc);
@@ -78,4 +78,4 @@ private:
   int _startIndex;
 };
 
-#endif // __CSPDFUISEARCHWIDGET_H__
+#endif // CSPDFUISEARCHWIDGET_H

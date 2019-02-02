@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFUITOCWIDGET_H__
-#define __CSPDFUITOCWIDGET_H__
+#ifndef CSPDFUITOCWIDGET_H
+#define CSPDFUITOCWIDGET_H
 
 #include <QtWidgets/QWidget>
 
@@ -45,7 +45,7 @@ namespace Ui {
 class CS_PDFUI_EXPORT csPdfUiTocWidget : public QWidget {
   Q_OBJECT
 public:
-  csPdfUiTocWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);
+  csPdfUiTocWidget(QWidget *parent = nullptr, Qt::WindowFlags f = 0);
   ~csPdfUiTocWidget();
 
   void setDocument(const class csPDFiumDocument& doc);
@@ -62,4 +62,4 @@ private:
   csPDFiumDocument _doc;
 };
 
-#endif // __CSPDFUITOCWIDGET_H__
+#endif // CSPDFUITOCWIDGET_H

@@ -40,7 +40,7 @@
 csPdfUiTocWidget::csPdfUiTocWidget(QWidget *parent, Qt::WindowFlags f)
   : QWidget(parent, f)
   , ui(new Ui::csPdfUiTocWidget)
-  , _contentsModel(0)
+  , _contentsModel(nullptr)
   , _doc()
 {
   ui->setupUi(this);
@@ -78,7 +78,7 @@ void csPdfUiTocWidget::setDocument(const class csPDFiumDocument& doc)
 void csPdfUiTocWidget::activateTocItem(const QModelIndex& index)
 {
   csPDFiumContentsNode *node = static_cast<csPDFiumContentsNode*>(index.internalPointer());
-  if( node == 0 ) {
+  if( node == nullptr ) {
     return;
   }
   const csPDFiumDest dest = _doc.resolveBookmark(node->pointer());

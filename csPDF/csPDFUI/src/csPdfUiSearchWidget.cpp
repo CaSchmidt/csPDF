@@ -51,11 +51,11 @@
 csPdfUiSearchWidget::csPdfUiSearchWidget(QWidget *parent, Qt::WindowFlags f)
   : QWidget(parent, f)
   , ui(new Ui::csPdfUiSearchWidget)
-  , _delegate(0)
+  , _delegate(nullptr)
   , _doc()
-  , _results(0)
-  , _search(0)
-  , _thread(0)
+  , _results(nullptr)
+  , _search(nullptr)
+  , _thread(nullptr)
   , _startIndex()
 {
   qRegisterMetaType<csPdfSearchResults>("csPdfSearchResults");
@@ -198,8 +198,8 @@ bool csPdfUiSearchWidget::event(QEvent *event)
       if( pageNo > 0 ) {
         // Image of Page
         const csPDFiumPage helpPage = _doc.page(pageNo-1);
-        const qreal s = qMin((qreal)height() / helpPage.size().width(),
-                             (qreal)height() / helpPage.size().height());
+        const qreal s = qMin(static_cast<qreal>(height()) / helpPage.size().width(),
+                             static_cast<qreal>(height()) / helpPage.size().height());
         const QImage helpImage = helpPage.renderToImage(s);
         // Flags
         csImageTip::Flags flags = csImageTip::DrawBorder;
@@ -215,7 +215,7 @@ bool csPdfUiSearchWidget::event(QEvent *event)
           flags |= csImageTip::ForcePosition;
         }
         // Tool Tip
-        csImageTip::showImage(tipPos, helpImage, 0, flags);
+        csImageTip::showImage(tipPos, helpImage, nullptr, flags);
 
         help->accept();
         return true;

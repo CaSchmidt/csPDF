@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFUIDOCUMENTVIEW_H__
-#define __CSPDFUIDOCUMENTVIEW_H__
+#ifndef CSPDFUIDOCUMENTVIEW_H
+#define CSPDFUIDOCUMENTVIEW_H
 
 #include <QtCore/QStack>
 #include <QtWidgets/QGraphicsView>
@@ -161,4 +161,4 @@ signals:
   void zoomChanged(qreal zoom); // [%]
 };
 
-#endif // __CSPDFUIDOCUMENTVIEW_H__
+#endif // CSPDFUIDOCUMENTVIEW_H
