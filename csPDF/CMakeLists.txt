@@ -24,7 +24,7 @@ else()
   message("PDFium library found (${PDFium_LIB}).")
 endif()
 
-add_subdirectory(../csQt
+add_subdirectory(../csQt/csQt
   ${CMAKE_CURRENT_BINARY_DIR}/csQt
   )
 
@@ -39,3 +39,4 @@ add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII)
 add_subdirectory(csPDFium)
 add_subdirectory(csPDFSearch)
 add_subdirectory(csPDFUI)
+add_subdirectory(examples/csPDF)
