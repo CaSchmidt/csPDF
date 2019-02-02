@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __WSEARCHEDIT_H__
-#define __WSEARCHEDIT_H__
+#ifndef WSEARCHEDIT_H
+#define WSEARCHEDIT_H
 
 #include <QtWidgets/QWidget>
 
@@ -41,7 +41,7 @@ namespace Ui {
 class WQuickSearch : public QWidget {
   Q_OBJECT
 public:
-  WQuickSearch(QWidget *parent = 0, Qt::WindowFlags f = 0);
+  WQuickSearch(QWidget *parent = nullptr, Qt::WindowFlags f = 0);
   ~WQuickSearch();
 
 protected:
@@ -54,4 +54,4 @@ signals:
   void searchTextEdited(const QString& text);
 };
 
-#endif // __WSEARCHEDIT_H__
+#endif // WSEARCHEDIT_H

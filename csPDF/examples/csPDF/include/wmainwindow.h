@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __WMAINWINDOW_H__
-#define __WMAINWINDOW_H__
+#ifndef WMAINWINDOW_H
+#define WMAINWINDOW_H
 
 #include <QtWidgets/QMainWindow>
 
@@ -41,7 +41,7 @@ namespace Ui {
 class WMainWindow : public QMainWindow {
   Q_OBJECT
 public:
-  WMainWindow(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+  WMainWindow(QWidget *parent = nullptr, Qt::WindowFlags flags = 0);
   ~WMainWindow();
 
 private slots:
@@ -61,4 +61,4 @@ private:
   Ui::WMainWindow *ui;
 };
 
-#endif // __WMAINWINDOW_H__
+#endif // WMAINWINDOW_H
