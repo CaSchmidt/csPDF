@@ -50,7 +50,7 @@ namespace util {
     csPDFiumContentsNode *child =
         new csPDFiumContentsNode((const ushort*)buffer.constData(), bookmark,
                                  parent);
-    if( child == 0 ) {
+    if( child == nullptr ) {
       return;
     }
     parent->appendChild(child);

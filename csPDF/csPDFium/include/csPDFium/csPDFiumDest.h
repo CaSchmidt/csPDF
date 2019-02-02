@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMDEST_H__
-#define __CSPDFIUMDEST_H__
+#ifndef CSPDFIUMDEST_H
+#define CSPDFIUMDEST_H
 
 #include <QtCore/QPointF>
 
@@ -91,4 +91,4 @@ private:
   Type _type;
 };
 
-#endif // __CSPDFIUMDEST_H__
+#endif // CSPDFIUMDEST_H

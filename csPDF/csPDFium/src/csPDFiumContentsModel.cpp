@@ -35,9 +35,9 @@
 
 csPDFiumContentsModel::csPDFiumContentsModel(QObject *parent)
   : QAbstractItemModel(parent)
-  , _contents(0)
-  , _displayed(0)
-  , _filtered(0)
+  , _contents(nullptr)
+  , _displayed(nullptr)
+  , _filtered(nullptr)
 {
   _contents = newRootNode();
   _filtered = newRootNode();
@@ -53,7 +53,7 @@ csPDFiumContentsModel::~csPDFiumContentsModel()
 
 csPDFiumContentsNode *csPDFiumContentsModel::newRootNode()
 {
-  return new csPDFiumContentsNode((const ushort*)L"<Root>", 0, 0);
+  return new csPDFiumContentsNode(reinterpret_cast<const ushort*>(L"<Root>"), nullptr, nullptr);
 }
 
 void csPDFiumContentsModel::setRootNode(csPDFiumContentsNode *root)
@@ -63,7 +63,7 @@ void csPDFiumContentsModel::setRootNode(csPDFiumContentsNode *root)
   delete _contents;
   delete _filtered;
 
-  if( root == 0 ) {
+  if( root == nullptr ) {
     _contents = newRootNode();
   } else {
     _contents = root;
@@ -134,7 +134,7 @@ QModelIndex csPDFiumContentsModel::index(int row, int column,
   }
 
   csPDFiumContentsNode *childItem = parentItem->child(row);
-  if( childItem != 0 ) {
+  if( childItem != nullptr ) {
     return createIndex(row, column, childItem);
   }
 

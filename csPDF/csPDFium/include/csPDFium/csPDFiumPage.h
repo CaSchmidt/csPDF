@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMPAGE_H__
-#define __CSPDFIUMPAGE_H__
+#ifndef CSPDFIUMPAGE_H
+#define CSPDFIUMPAGE_H
 
 #include <QtCore/QRectF>
 #include <QtCore/QSharedPointer>
@@ -70,4 +70,4 @@ private:
   friend class csPDFiumDocument;
 };
 
-#endif // __CSPDFIUMPAGE_H__
+#endif // CSPDFIUMPAGE_H

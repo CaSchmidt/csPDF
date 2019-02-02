@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __FPDF_UTIL_H__
-#define __FPDF_UTIL_H__
+#ifndef FPDF_UTIL_H
+#define FPDF_UTIL_H
 
 #include <fpdfsdk/fpdfview.h>
 #include <fpdfsdk/fpdf_doc.h>
@@ -67,4 +67,4 @@ namespace util {
 
 } // namespace util
 
-#endif // __FPDF_UTIL_H__
+#endif // FPDF_UTIL_H

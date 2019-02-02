@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMDOCUMENTIMPL_H__
-#define __CSPDFIUMDOCUMENTIMPL_H__
+#ifndef CSPDFIUMDOCUMENTIMPL_H
+#define CSPDFIUMDOCUMENTIMPL_H
 
 #include <QtCore/QByteArray>
 #include <QtCore/QMutex>
@@ -66,4 +66,4 @@ public:
   QMutex        mutex;
 };
 
-#endif // __CSPDFIUMDOCUMENTIMPL_H__
+#endif // CSPDFIUMDOCUMENTIMPL_H

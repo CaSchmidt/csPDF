@@ -37,7 +37,7 @@ namespace priv {
 
   int utf16len(const ushort *str)
   {
-    if( str == 0 ) {
+    if( str == nullptr ) {
       return 0;
     }
 
@@ -53,12 +53,12 @@ namespace priv {
   {
     const int len = utf16len(str);
     if( len == 0 ) {
-      return 0;
+      return nullptr;
     }
 
     ushort *copy = new ushort[len+1];
-    if( copy == 0 ) {
-      return 0;
+    if( copy == nullptr ) {
+      return nullptr;
     }
 
     for(int i = 0; i < len; i++) {
@@ -76,9 +76,9 @@ namespace priv {
 csPDFiumContentsNode::csPDFiumContentsNode(const ushort *title,
                                            const void *pointer,
                                            csPDFiumContentsNode *parent)
-  : _title(0)
+  : _title(nullptr)
   , _parent(parent)
-  , _children(0)
+  , _children(nullptr)
   , _pointer(pointer)
   , _numChildren(0)
 {
@@ -112,14 +112,14 @@ void csPDFiumContentsNode::appendChild(const ushort *title, const void *pointer)
 
 void csPDFiumContentsNode::appendChild(const csPDFiumContentsNode *child)
 {
-  if( child == 0 ) {
+  if( child == nullptr ) {
     return;
   }
 
   csPDFiumContentsNode **old = _children;
 
   _children = new csPDFiumContentsNode*[_numChildren+1];
-  if( _children == 0 ) {
+  if( _children == nullptr ) {
     _children = old;
     return;
   }
@@ -136,7 +136,7 @@ void csPDFiumContentsNode::appendChild(const csPDFiumContentsNode *child)
 csPDFiumContentsNode *csPDFiumContentsNode::child(int row)
 {
   if( row < 0  ||  row >= _numChildren ) {
-    return 0;
+    return nullptr;
   }
   return _children[row];
 }
@@ -154,7 +154,7 @@ int csPDFiumContentsNode::columnCount() const
 const csPDFiumContentsNode *csPDFiumContentsNode::constChild(int row) const
 {
   if( row < 0  ||  row >= _numChildren ) {
-    return 0;
+    return nullptr;
   }
   return _children[row];
 }
@@ -171,7 +171,7 @@ csPDFiumContentsNode *csPDFiumContentsNode::parent()
 
 int csPDFiumContentsNode::row() const
 {
-  if( _parent != 0 ) {
+  if( _parent != nullptr ) {
     for(int i = 0; i < _parent->_numChildren; i++) {
       if( _parent->_children[i] == this ) {
         return i;

@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMDOCUMENT_H__
-#define __CSPDFIUMDOCUMENT_H__
+#ifndef CSPDFIUMDOCUMENT_H
+#define CSPDFIUMDOCUMENT_H
 
 #include <QtCore/QList>
 #include <QtCore/QPair>
@@ -77,4 +77,4 @@ private:
   QSharedPointer<csPDFiumDocumentImpl> impl;
 };
 
-#endif // __CSPDFIUMDOCUMENT_H__
+#endif // CSPDFIUMDOCUMENT_H

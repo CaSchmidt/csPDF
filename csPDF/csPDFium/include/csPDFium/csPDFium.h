@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUM_H__
-#define __CSPDFIUM_H__
+#ifndef CSPDFIUM_H
+#define CSPDFIUM_H
 
 #include <QtCore/QFlags>
 
@@ -55,4 +55,4 @@ namespace csPDFium {
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(csPDFium::PathExtractionFlags)
 
-#endif // __CSPDFIUM_H__
+#endif // CSPDFIUM_H

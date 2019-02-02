@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMCONTENTSNODE_H__
-#define __CSPDFIUMCONTENTSNODE_H__
+#ifndef CSPDFIUMCONTENTSNODE_H
+#define CSPDFIUMCONTENTSNODE_H
 
 #include <QtCore/QVariant>
 
@@ -64,4 +64,4 @@ private:
   int _numChildren;
 };
 
-#endif // __CSPDFIUMCONTENTSNODE_H__
+#endif // CSPDFIUMCONTENTSNODE_H

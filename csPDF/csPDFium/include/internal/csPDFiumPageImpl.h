@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMPAGEIMPL_H__
-#define __CSPDFIUMPAGEIMPL_H__
+#ifndef CSPDFIUMPAGEIMPL_H
+#define CSPDFIUMPAGEIMPL_H
 
 #include <QtCore/QSharedPointer>
 #include <QtGui/QMatrix>
@@ -70,4 +70,4 @@ public:
   QStringList wordCache;
 };
 
-#endif // __CSPDFIUMPAGEIMPL_H__
+#endif // CSPDFIUMPAGEIMPL_H

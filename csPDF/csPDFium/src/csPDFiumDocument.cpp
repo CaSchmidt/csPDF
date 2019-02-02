@@ -112,7 +112,7 @@ csPDFiumPage csPDFiumDocument::page(const int no) const
   }
 
   csPDFiumPageImpl *pimpl = new csPDFiumPageImpl();
-  if( pimpl == 0 ) {
+  if( pimpl == nullptr ) {
     return csPDFiumPage();
   }
 
@@ -135,13 +135,13 @@ csPDFiumPage csPDFiumDocument::page(const int no) const
 csPDFiumContentsNode *csPDFiumDocument::tableOfContents() const
 {
   if( isEmpty() ) {
-    return 0;
+    return nullptr;
   }
 
   CSPDFIUM_DOCIMPL();
 
   csPDFiumContentsNode *root = csPDFiumContentsModel::newRootNode();
-  if( root != 0 ) {
+  if( root != nullptr ) {
     util::parseContents(FPDFBookmark_GetFirstChild(impl->document, NULL),
                         impl->document, root);
   }
@@ -218,7 +218,7 @@ csPDFiumDest csPDFiumDocument::resolveBookmark(const void *pointer) const
 
   CSPDFIUM_DOCIMPL();
 
-  if( pointer == 0 ) {
+  if( pointer == nullptr ) {
     return csPDFiumDest();
   }
 
@@ -236,7 +236,7 @@ csPDFiumDest csPDFiumDocument::resolveLink(const void *pointer) const
 
   CSPDFIUM_DOCIMPL();
 
-  if( pointer == 0 ) {
+  if( pointer == nullptr ) {
     return csPDFiumDest();
   }
 
@@ -288,7 +288,7 @@ csPDFiumDocument csPDFiumDocument::load(const QString& filename,
                                         bool *pw_required)
 {
   csPDFiumDocumentImpl *impl = new csPDFiumDocumentImpl();
-  if( impl == 0 ) {
+  if( impl == nullptr ) {
     return csPDFiumDocument();
   }
 
@@ -296,7 +296,7 @@ csPDFiumDocument csPDFiumDocument::load(const QString& filename,
     *pw_required = false;
   }
   const char *pdf_password = password.isEmpty()
-      ? NULL
+      ? nullptr
       : password.constData();
 
   impl->fileName = filename;

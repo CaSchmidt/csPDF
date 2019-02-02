@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMTEXTPAGE_H__
-#define __CSPDFIUMTEXTPAGE_H__
+#ifndef CSPDFIUMTEXTPAGE_H
+#define CSPDFIUMTEXTPAGE_H
 
 #include <csPDFium/csPDFiumText.h>
 
@@ -69,4 +69,4 @@ private:
 
 typedef QList<csPDFiumTextPage> csPDFiumTextPages;
 
-#endif // __CSPDFIUMTEXTPAGE_H__
+#endif // CSPDFIUMTEXTPAGE_H

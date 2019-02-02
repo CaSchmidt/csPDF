@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFUTIL_H__
-#define __CSPDFUTIL_H__
+#ifndef CSPDFUTIL_H
+#define CSPDFUTIL_H
 
 #include <QtCore/QRectF>
 
@@ -66,4 +66,4 @@ namespace csPDFium {
 
 } // namespace csPDFium
 
-#endif // __CSPDFUTIL_H__
+#endif // CSPDFUTIL_H

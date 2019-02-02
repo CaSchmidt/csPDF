@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUM_CONFIG_H__
-#define __CSPDFIUM_CONFIG_H__
+#ifndef CSPDFIUM_CONFIG_H
+#define CSPDFIUM_CONFIG_H
 
 #include <QtCore/QtGlobal>
 
@@ -40,4 +40,4 @@
 # define CS_PDFIUM_EXPORT  Q_DECL_IMPORT
 #endif
 
-#endif // __CSPDFIUM_CONFIG_H__
+#endif // CSPDFIUM_CONFIG_H

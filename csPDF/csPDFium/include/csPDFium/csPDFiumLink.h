@@ -29,15 +29,15 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMLINK_H__
-#define __CSPDFIUMLINK_H__
+#ifndef CSPDFIUMLINK_H
+#define CSPDFIUMLINK_H
 
 #include <QtCore/QList>
 #include <QtCore/QRectF>
 
 class csPDFiumLink {
 public:
-  csPDFiumLink(const QRectF& srcRect = QRectF(), const void *pointer = 0)
+  csPDFiumLink(const QRectF& srcRect = QRectF(), const void *pointer = nullptr)
     : _pointer(const_cast<void*>(pointer))
     , _srcRect(srcRect)
   {
@@ -49,7 +49,7 @@ public:
 
   inline bool isEmpty() const
   {
-    return _pointer == 0  ||  _srcRect.isEmpty();
+    return _pointer == nullptr  ||  _srcRect.isEmpty();
   }
 
   inline const void *pointer() const
@@ -69,4 +69,4 @@ private:
 
 typedef QList<csPDFiumLink> csPDFiumLinks;
 
-#endif // __CSPDFIUMLINK_H__
+#endif // CSPDFIUMLINK_H

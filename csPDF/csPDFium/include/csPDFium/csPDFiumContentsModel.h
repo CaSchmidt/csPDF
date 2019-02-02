@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMCONTENTSMODEL_H__
-#define __CSPDFIUMCONTENTSMODEL_H__
+#ifndef CSPDFIUMCONTENTSMODEL_H
+#define CSPDFIUMCONTENTSMODEL_H
 
 #include <QtCore/QAbstractItemModel>
 
@@ -39,7 +39,7 @@
 class CS_PDFIUM_EXPORT csPDFiumContentsModel : public QAbstractItemModel {
   Q_OBJECT
 public:
-  csPDFiumContentsModel(QObject *parent = 0);
+  csPDFiumContentsModel(QObject *parent = nullptr);
   ~csPDFiumContentsModel();
 
   static csPDFiumContentsNode *newRootNode();
@@ -68,4 +68,4 @@ private:
   csPDFiumContentsNode *_filtered;
 };
 
-#endif // __CSPDFIUMCONTENTSMODEL_H__
+#endif // CSPDFIUMCONTENTSMODEL_H

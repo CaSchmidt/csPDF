@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFIUMTEXT_H__
-#define __CSPDFIUMTEXT_H__
+#ifndef CSPDFIUMTEXT_H
+#define CSPDFIUMTEXT_H
 
 #include <QtCore/QList>
 #include <QtCore/QRectF>
@@ -118,4 +118,4 @@ private:
 
 typedef QList<csPDFiumText> csPDFiumTexts;
 
-#endif // __CSPDFIUMTEXT_H__
+#endif // CSPDFIUMTEXT_H
