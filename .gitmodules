@@ -1,0 +1,3 @@
+[submodule "csQt"]
+	path = csQt
+	url = https://github.com/CaSchmidt/csQt.git
