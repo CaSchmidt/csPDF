@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFSEARCHUTIL_H__
-#define __CSPDFSEARCHUTIL_H__
+#ifndef CSPDFSEARCHUTIL_H
+#define CSPDFSEARCHUTIL_H
 
 #include <QList>
 
@@ -59,4 +59,4 @@ CS_PDFSEARCH_EXPORT csPdfFindResults csPdfFindAll(const csPDFiumTexts& hay,
 
 CS_PDFSEARCH_EXPORT QStringList csPdfPrepareSearch(const QString& text);
 
-#endif // __CSPDFSEARCHUTIL_H__
+#endif // CSPDFSEARCHUTIL_H

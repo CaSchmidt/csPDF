@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFSEARCH_CONFIG_H__
-#define __CSPDFSEARCH_CONFIG_H__
+#ifndef CSPDFSEARCH_CONFIG_H
+#define CSPDFSEARCH_CONFIG_H
 
 #include <QtCore/QtGlobal>
 
@@ -40,4 +40,4 @@
 # define CS_PDFSEARCH_EXPORT  Q_DECL_IMPORT
 #endif
 
-#endif // __CSPDFSEARCH_CONFIG_H__
+#endif // CSPDFSEARCH_CONFIG_H

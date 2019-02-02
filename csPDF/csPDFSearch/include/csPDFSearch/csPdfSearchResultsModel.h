@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFSEARCHRESULTSMODEL_H__
-#define __CSPDFSEARCHRESULTSMODEL_H__
+#ifndef CSPDFSEARCHRESULTSMODEL_H
+#define CSPDFSEARCHRESULTSMODEL_H
 
 #include <QAbstractTableModel>
 
@@ -40,7 +40,7 @@
 class CS_PDFSEARCH_EXPORT csPdfSearchResultsModel : public QAbstractTableModel {
   Q_OBJECT
 public:
-  csPdfSearchResultsModel(QObject *parent = 0);
+  csPdfSearchResultsModel(QObject *parent = nullptr);
   ~csPdfSearchResultsModel();
 
   int columnCount(const QModelIndex& parent = QModelIndex()) const;
@@ -58,4 +58,4 @@ private:
   csPdfSearchResults _results;
 };
 
-#endif // __CSPDFSEARCHRESULTSMODEL_H__
+#endif // CSPDFSEARCHRESULTSMODEL_H

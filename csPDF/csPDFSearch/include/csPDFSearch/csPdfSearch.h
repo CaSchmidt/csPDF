@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFSEARCH_H__
-#define __CSPDFSEARCH_H__
+#ifndef CSPDFSEARCH_H
+#define CSPDFSEARCH_H
 
 #include <QObject>
 
@@ -41,7 +41,7 @@
 class CS_PDFSEARCH_EXPORT csPdfSearch : public QObject {
   Q_OBJECT
 public:
-  csPdfSearch(QObject *parent = 0);
+  csPdfSearch(QObject *parent = nullptr);
   ~csPdfSearch();
 
   bool isRunning() const;
@@ -91,4 +91,4 @@ private:
   int _lastProgress;
 };
 
-#endif // __CSPDFSEARCH_H__
+#endif // CSPDFSEARCH_H

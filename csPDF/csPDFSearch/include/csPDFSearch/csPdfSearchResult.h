@@ -29,8 +29,8 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef __CSPDFSEARCHRESULT_H__
-#define __CSPDFSEARCHRESULT_H__
+#ifndef CSPDFSEARCHRESULT_H
+#define CSPDFSEARCHRESULT_H
 
 #include <QStringList>
 
@@ -94,4 +94,4 @@ typedef QList<csPdfSearchResult>::const_iterator  csConstPdfSearchResultIter;
 
 Q_DECLARE_METATYPE(csPdfSearchResults)
 
-#endif // __CSPDFSEARCHRESULT_H__
+#endif // CSPDFSEARCHRESULT_H
