@@ -31,7 +31,7 @@
 
 #include <csPDFSearch/csPdfSearch.h>
 
-#include "internal/config.h"
+#include "internal/config_Search.h"
 #include <csPDFSearch/csPdfSearchUtil.h>
 
 ////// public ////////////////////////////////////////////////////////////////

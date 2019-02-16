@@ -4,7 +4,7 @@ set(csPDFSearch_HEADERS
   include/csPDFSearch/csPdfSearchResultsModel.h
   include/csPDFSearch/csPdfSearchUtil.h
   include/csPDFSearch/cspdfsearch_config.h
-  include/internal/config.h
+  include/internal/config_Search.h
   )
 
 set(csPDFSearch_SOURCES

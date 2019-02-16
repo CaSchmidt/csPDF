@@ -10,7 +10,6 @@ set(csPDFium_HEADERS
   include/csPDFium/csPDFiumTextPage.h
   include/csPDFium/csPDFiumUtil.h
   include/csPDFium/cspdfium_config.h
-  include/internal/config.h
   include/internal/csPDFiumDocumentImpl.h
   include/internal/csPDFiumPageImpl.h
   include/internal/fpdf_util.h

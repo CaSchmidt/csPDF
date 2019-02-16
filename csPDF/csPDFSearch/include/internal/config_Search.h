@@ -1,5 +1,5 @@
 /****************************************************************************
-** Copyright (c) 2015, Carsten Schmidt. All rights reserved.
+** Copyright (c) 2013-2015, Carsten Schmidt. All rights reserved.
 **
 ** Redistribution and use in source and binary forms, with or without
 ** modification, are permitted provided that the following conditions
@@ -29,7 +29,9 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef CONFIG_SEARCH_H
+#define CONFIG_SEARCH_H
 
-#endif // CONFIG_H
+#define CSPDF_SEARCH_BLOCKSIZE  5
+
+#endif // CONFIG_SEARCH_H

@@ -33,8 +33,6 @@
 
 #include <csPDFium/csPDFiumUtil.h>
 
-#include "internal/config.h"
-
 namespace util {
 
   inline bool isSeparator(const QChar& c)
