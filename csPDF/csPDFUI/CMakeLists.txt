@@ -41,3 +41,8 @@ install(TARGETS csPDFUI
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
   )
+
+install(DIRECTORY include/
+  DESTINATION include
+  PATTERN "internal" EXCLUDE
+  )
