@@ -24,6 +24,10 @@ else()
   message("PDFium library found (${PDFium_LIB}).")
 endif()
 
+add_subdirectory(3rdparty/UnixLibs
+  ${CMAKE_CURRENT_BINARY_DIR}/UnixLibs
+  )
+
 add_subdirectory(../csQt/csQt
   ${CMAKE_CURRENT_BINARY_DIR}/csQt
   )
