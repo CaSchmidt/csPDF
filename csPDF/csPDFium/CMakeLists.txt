@@ -35,10 +35,6 @@ target_link_libraries(csPDFium ${PDFium_LIB} Qt5::Widgets)
 
 format_output_name(csPDFium "csPDFium")
 
-set_target_properties(csPDFium PROPERTIES
-  RUNTIME_OUTPUT_DIRECTORY ${csPDF_BINARY_DIR}
-  )
-
 target_compile_definitions(csPDFium PRIVATE CS_BUILD_PDFIUM_LIB)
 target_include_directories(csPDFium PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 

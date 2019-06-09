@@ -24,10 +24,6 @@ target_link_libraries(csPDF csPDFium csPDFUI Qt5::Widgets)
 
 format_output_name(csPDF "csPDF")
 
-set_target_properties(csPDF PROPERTIES
-  RUNTIME_OUTPUT_DIRECTORY ${csPDF_BINARY_DIR}
-  )
-
 if(WIN32)
   set_target_properties(csPDF PROPERTIES WIN32_EXECUTABLE ON)
 endif()

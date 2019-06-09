@@ -28,10 +28,6 @@ add_subdirectory(../csQt/csQt
   ${CMAKE_CURRENT_BINARY_DIR}/csQt
   )
 
-set_target_properties(csQt PROPERTIES
-  RUNTIME_OUTPUT_DIRECTORY ${csPDF_BINARY_DIR}
-  )
-
 ### Targets ##################################################################
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII)

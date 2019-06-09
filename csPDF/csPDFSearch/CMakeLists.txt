@@ -21,10 +21,6 @@ target_link_libraries(csPDFSearch csPDFium Qt5::Widgets)
 
 format_output_name(csPDFSearch "csPDFSearch")
 
-set_target_properties(csPDFSearch PROPERTIES
-  RUNTIME_OUTPUT_DIRECTORY ${csPDF_BINARY_DIR}
-  )
-
 target_compile_definitions(csPDFSearch PRIVATE CS_BUILD_PDFSEARCH_LIB)
 target_include_directories(csPDFSearch PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(csPDFSearch PRIVATE ${csPDF_SOURCE_DIR}/csPDFium/include)
