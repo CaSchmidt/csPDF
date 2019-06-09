@@ -6,6 +6,8 @@ if(MSVC)
   add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
 endif()
 
+set(png_INCLUDES  ${CMAKE_CURRENT_SOURCE_DIR}/png1637/include)
 set(zlib_INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/zlib1211/include)
 
 add_subdirectory(zlib1211)
+add_subdirectory(png1637)
