@@ -18,30 +18,39 @@ list(APPEND zlib_SOURCES
   src/zutil.c
   )
 
-#if(MSVC)
-#  enable_language(ASM_MASM)
-#  set(CMAKE_ASM_MASM_FLAGS "${CMAKE_ASM_MASM_FLAGS} /nologo")
-#  if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-#    list(APPEND zlib_SOURCES
-#      src-masm64/gvmat64.asm
-#      src-masm64/inffas8664.c
-#      src-masm64/inffasx64.asm
-#      )
-#    list(APPEND zlib_DEFINES
-#      ASMV
-#      ASMINF
-#      )
-#  elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
-#    list(APPEND zlib_SOURCES
-#      src-masm86/inffas32.asm
-#      src-masm86/match686.asm
-#      )
-#    list(APPEND zlib_SOURCES
-#      ASMV
-#      ASMINF
-#      )
-#  endif()
-#endif()
+if(MSVC)
+  enable_language(ASM_MASM)
+  set(CMAKE_ASM_MASM_FLAGS "${CMAKE_ASM_MASM_FLAGS} /nologo")
+  message(${CMAKE_ASM_MASM_SOURCE_FILE_EXTENSIONS})
+  set(CMAKE_ASM_MASM_SOURCE_FILE_EXTENSIONS masm CACHE STRING "" FORCE)
+  message(${CMAKE_ASM_MASM_SOURCE_FILE_EXTENSIONS})
+  if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    list(APPEND zlib_SOURCES
+      src-masm64/gvmat64.masm
+      src-masm64/inffas8664.c
+      src-masm64/inffasx64.masm
+      )
+    list(APPEND zlib_DEFINES
+      ASMV
+      ASMINF
+      )
+    set_source_files_properties(src-masm64/gvmat64.masm src-masm64/inffasx64.masm
+      PROPERTIES LANGUAGE ASM_MASM
+      )
+  elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
+    list(APPEND zlib_SOURCES
+      src-masm86/inffas32.masm
+      src-masm86/match686.masm
+      )
+    list(APPEND zlib_DEFINES
+      ASMV
+      ASMINF
+      )
+    set_source_files_properties(src-masm86/inffas32.masm src-masm86/match686.masm
+      PROPERTIES LANGUAGE ASM_MASM
+      )
+  endif()
+endif()
 
 ### Target ###################################################################
 
