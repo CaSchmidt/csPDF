@@ -29,7 +29,7 @@
 ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#include <fpdfsdk/fpdfview.h>
+#include <fpdfview.h>
 
 #include <csPDFium/csPDFium.h>
 

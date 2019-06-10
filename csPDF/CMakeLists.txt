@@ -17,16 +17,11 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/forms)
 find_package(Qt5Widgets 5.6 REQUIRED)
 
-find_library(PDFium_LIB NAMES PDFium PDFium-x86 PDFium-x64)
-if(NOT PDFium_LIB)
-  message(FATAL_ERROR "PDFium library not found!")
-else()
-  message("PDFium library found (${PDFium_LIB}).")
-endif()
-
 add_subdirectory(3rdparty/UnixLibs
   ${CMAKE_CURRENT_BINARY_DIR}/UnixLibs
   )
+
+format_output_name(PDFium "PDFium")
 
 add_subdirectory(../csQt/csQt
   ${CMAKE_CURRENT_BINARY_DIR}/csQt
