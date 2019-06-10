@@ -71,6 +71,7 @@ FX_BOOL CPDF_Type3Font::Load() {
   CPDF_Object* pEncoding = m_pFontDict->GetDirectObjectBy("Encoding");
   if (pEncoding) {
     LoadPDFEncoding(pEncoding, m_BaseEncoding, m_pCharNames, FALSE, FALSE);
+#if 0 // CaSchmidt: PDFium issue 642
     if (m_pCharNames) {
       for (int i = 0; i < 256; i++) {
         m_Encoding.m_Unicodes[i] =
@@ -80,6 +81,7 @@ FX_BOOL CPDF_Type3Font::Load() {
         }
       }
     }
+#endif
   }
   return TRUE;
 }
