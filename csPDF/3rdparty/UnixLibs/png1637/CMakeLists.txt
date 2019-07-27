@@ -37,4 +37,4 @@ target_include_directories(png
   PRIVATE ${zlib_INCLUDES}
   )
 
-target_link_libraries(png zlib)
+target_link_libraries(png crzlib)

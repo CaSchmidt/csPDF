@@ -437,7 +437,7 @@ target_include_directories(PDFium
   )
 
 target_link_libraries(PDFium
-  freetype jpeg-static zlib
+  freetype jpeg-static crzlib
   )
 
 install(TARGETS PDFium

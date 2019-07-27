@@ -29,11 +29,13 @@ list(APPEND jt_INCLUDES
   )
 set(pdfium_INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/pdfium2785/public PARENT_SCOPE)
 set(png_INCLUDES    ${CMAKE_CURRENT_SOURCE_DIR}/png1637/include)
-set(zlib_INCLUDES   ${CMAKE_CURRENT_SOURCE_DIR}/zlib1211/include)
+set(zlib_INCLUDES   ${CMAKE_CURRENT_SOURCE_DIR}/Cr-zlib-75.0.3770.156/include)
+#set(zlib_INCLUDES   ${CMAKE_CURRENT_SOURCE_DIR}/zlib1211/include)
 
 ### Targets ##################################################################
 
-add_subdirectory(zlib1211)
+add_subdirectory(Cr-zlib-75.0.3770.156)
+#add_subdirectory(zlib1211)
 add_subdirectory(png1637)
 add_subdirectory(ft291)
 add_subdirectory(jt202)

@@ -58,4 +58,4 @@ target_include_directories(freetype
   PRIVATE ${zlib_INCLUDES}
   )
 
-target_link_libraries(freetype zlib)
+target_link_libraries(freetype crzlib)
