@@ -47,6 +47,8 @@ add_library(freetype STATIC
   ${freetype_SOURCES}
   )
 
+format_output_name(freetype "FreeType2")
+
 target_compile_definitions(freetype
   PRIVATE FT2_BUILD_LIBRARY
   )

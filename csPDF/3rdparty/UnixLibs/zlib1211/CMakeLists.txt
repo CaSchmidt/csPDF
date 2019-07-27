@@ -56,6 +56,8 @@ add_library(zlib STATIC
   ${zlib_SOURCES}
   )
 
+format_output_name(zlib "zlib")
+
 if(DEFINED zlib_DEFINES)
   target_compile_definitions(zlib
     PRIVATE ${zlib_DEFINES}

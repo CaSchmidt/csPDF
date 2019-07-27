@@ -26,6 +26,8 @@ add_library(png STATIC
   ${png_SOURCES}
   )
 
+format_output_name(png "png")
+
 target_compile_definitions(png
   PRIVATE PNG_INTEL_SSE_OPT=1
   )

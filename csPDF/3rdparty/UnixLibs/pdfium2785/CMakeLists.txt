@@ -419,6 +419,8 @@ add_library(PDFium SHARED
   ${pdfwindow_SRCS}
   )
 
+format_output_name(PDFium "PDFium")
+
 target_compile_options(PDFium
   PRIVATE /wd4244 /wd4267 /wd4996
   )
