@@ -21,9 +21,7 @@ list(APPEND zlib_SOURCES
 if(MSVC)
   enable_language(ASM_MASM)
   set(CMAKE_ASM_MASM_FLAGS "${CMAKE_ASM_MASM_FLAGS} /nologo")
-  message(${CMAKE_ASM_MASM_SOURCE_FILE_EXTENSIONS})
   set(CMAKE_ASM_MASM_SOURCE_FILE_EXTENSIONS masm CACHE STRING "" FORCE)
-  message(${CMAKE_ASM_MASM_SOURCE_FILE_EXTENSIONS})
   if(CMAKE_SIZEOF_VOID_P EQUAL 8)
     list(APPEND zlib_SOURCES
       src-masm64/gvmat64.masm
@@ -70,3 +68,13 @@ target_include_directories(zlib
   )
 
 target_link_libraries(zlib)
+
+install(TARGETS zlib
+  RUNTIME DESTINATION bin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  )
+
+install(FILES include/zconf.h include/zlib.h
+  DESTINATION include
+  )
