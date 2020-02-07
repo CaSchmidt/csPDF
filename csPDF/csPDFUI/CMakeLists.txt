@@ -28,7 +28,6 @@ format_output_name(csPDFUI "csPDFUI")
 
 target_compile_definitions(csPDFUI PRIVATE CS_BUILD_PDFUI_LIB)
 target_include_directories(csPDFUI PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_include_directories(csPDFUI PRIVATE ${csQt_SOURCE_DIR}/include)
 target_include_directories(csPDFUI PRIVATE ${csPDF_SOURCE_DIR}/csPDFium/include)
 target_include_directories(csPDFUI PRIVATE ${csPDF_SOURCE_DIR}/csPDFSearch/include)
 
