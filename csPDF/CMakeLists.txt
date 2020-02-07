@@ -11,10 +11,6 @@ include(FormatOutputName)
 
 ### Dependencies #############################################################
 
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/forms)
 find_package(Qt5Widgets 5.6 REQUIRED)
 
 add_subdirectory(3rdparty/UnixLibs

@@ -1,3 +1,5 @@
+### Project ##################################################################
+
 set(csPDFium_HEADERS
   include/csPDFium/csPDFium.h
   include/csPDFium/csPDFiumContentsModel.h
@@ -27,19 +29,33 @@ set(csPDFium_SOURCES
   src/util_text.cpp
   )
 
+### Target ###################################################################
+
 add_library(csPDFium SHARED
   ${csPDFium_HEADERS} ${csPDFium_SOURCES}
   )
 
-target_link_libraries(csPDFium PDFium Qt5::Widgets)
-
 format_output_name(csPDFium "csPDFium")
 
-target_compile_definitions(csPDFium PRIVATE CS_BUILD_PDFIUM_LIB)
+set_target_properties(csPDFium PROPERTIES
+  AUTOMOC ON
+  )
+
+target_compile_definitions(csPDFium
+  PRIVATE CS_BUILD_PDFIUM_LIB
+  )
+
 target_include_directories(csPDFium
-  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include
+  PUBLIC  ${CMAKE_CURRENT_SOURCE_DIR}/include
   PRIVATE ${pdfium_INCLUDES}
   )
+
+target_link_libraries(csPDFium
+  PRIVATE PDFium
+  PUBLIC  Qt5::Widgets
+  )
+
+### Install ##################################################################
 
 install(TARGETS csPDFium
   ARCHIVE DESTINATION lib

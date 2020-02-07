@@ -1,3 +1,5 @@
+### Project ##################################################################
+
 set(csPDFSearch_HEADERS
   include/csPDFSearch/csPdfSearch.h
   include/csPDFSearch/csPdfSearchResult.h
@@ -13,17 +15,31 @@ set(csPDFSearch_SOURCES
   src/csPdfSearchUtil.cpp
   )
 
+### Target ###################################################################
+
 add_library(csPDFSearch SHARED
   ${csPDFSearch_HEADERS} ${csPDFSearch_SOURCES}
   )
 
-target_link_libraries(csPDFSearch csPDFium Qt5::Widgets)
-
 format_output_name(csPDFSearch "csPDFSearch")
 
-target_compile_definitions(csPDFSearch PRIVATE CS_BUILD_PDFSEARCH_LIB)
-target_include_directories(csPDFSearch PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_include_directories(csPDFSearch PRIVATE ${csPDF_SOURCE_DIR}/csPDFium/include)
+target_compile_definitions(csPDFSearch
+  PRIVATE CS_BUILD_PDFSEARCH_LIB
+  )
+
+target_include_directories(csPDFSearch
+  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+  )
+
+target_link_libraries(csPDFSearch
+  PUBLIC csPDFium
+  )
+
+set_target_properties(csPDFSearch PROPERTIES
+  AUTOMOC ON
+  )
+
+### Install ##################################################################
 
 install(TARGETS csPDFSearch
   ARCHIVE DESTINATION lib
