@@ -48,6 +48,42 @@
 #define TEXT_LINEFEED L"\n"
 #define TEXT_CHARRATIO_GAPDELTA 0.070
 
+#if 0
+// CaSchmidt: Use with ProcessTextObject()
+void print(const CPDF_TextObject *obj)
+{
+  if( obj == nullptr ) {
+    return;
+  }
+
+  // (1) Font ////////////////////////////////////////////////////////////////
+
+  const CPDF_Font *font = obj->GetFont();
+  const char  *fonttype = font->IsCIDFont()
+      ? "CID"
+      : font->IsType1Font()
+        ? "Type1"
+        : font->IsType3Font()
+          ? "Type3"
+          : font->IsTrueTypeFont()
+            ? "TrueType"
+            : "<NONE>";
+
+  // (2) Text ////////////////////////////////////////////////////////////////
+
+  std::string text;
+  for(int i = 0; i < obj->CountItems(); i++) {
+    uint32_t code;
+    FX_FLOAT kern;
+    obj->GetCharInfo(i, code, kern);
+
+    text.push_back(static_cast<char>(code));
+  }
+
+  // (3) Debug ///////////////////////////////////////////////////////////////
+}
+#endif
+
 namespace {
 
 const FX_FLOAT kDefaultFontSize = 1.0f;
