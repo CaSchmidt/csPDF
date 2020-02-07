@@ -24,9 +24,9 @@
 FX_BOOL FT_UseTTCharmap(FXFT_Face face, int platform_id, int encoding_id) {
   for (int i = 0; i < FXFT_Get_Face_CharmapCount(face); i++) {
     if (FXFT_Get_Charmap_PlatformID(FXFT_Get_Face_Charmaps(face)[i]) ==
-            platform_id &&
+        platform_id &&
         FXFT_Get_Charmap_EncodingID(FXFT_Get_Face_Charmaps(face)[i]) ==
-            encoding_id) {
+        encoding_id) {
       FXFT_Set_Charmap(face, FXFT_Get_Face_Charmaps(face)[i]);
       return TRUE;
     }
@@ -230,6 +230,52 @@ void CPDF_ToUnicodeMap::Load(CPDF_Stream* pStream) {
       }
     } else if (word == "beginbfrange") {
       while (1) {
+#if 1 // CaSchmidt: Implement ToUnicode CMap according to "PDF Reference v1.7", "5.9.2 ToUnicode CMaps"
+        constexpr uint32_t replacement = 0xFFFD;
+
+        CFX_ByteString token;
+        token = parser.GetWord();
+        if( token.IsEmpty()  ||  token == "endbfrange" ) {
+          break;
+        }
+
+        const uint32_t srcCode1 = StringToCode(token.AsStringC());
+        token = parser.GetWord();
+        const uint32_t srcCode2 = StringToCode(token.AsStringC());
+
+        token = parser.GetWord();
+        if( token == '[' ) {
+          uint32_t code = srcCode1;
+          for(; code <= srcCode2; code++) {
+            token = parser.GetWord();
+            if( token.IsEmpty()  ||  token == ']' ) {
+              break;
+            }
+            m_Map[code] = StringToCode(token.AsStringC());
+          }
+
+          for(; code <= srcCode2; code++) {
+            m_Map[code] = replacement;
+          }
+
+          while( !token.IsEmpty()  &&  token != ']' ) {
+            token = parser.GetWord();
+          }
+        } else {
+          token = parser.GetWord();
+          uint32_t dstCode = StringToCode(token.AsStringC());
+          if( static_cast<uint32_t>(dstCode & 0xFF) <=
+              static_cast<uint32_t>(255) - (srcCode2 - srcCode1) ) {
+            for(uint32_t code = srcCode1; code <= srcCode2; code++) {
+              m_Map[code] = dstCode++;
+            }
+          } else {
+            for(uint32_t code = srcCode1; code <= srcCode2; code++) {
+              m_Map[code] = replacement;
+            }
+          }
+        }
+#else
         CFX_ByteString low, high;
         low = parser.GetWord();
         if (low.IsEmpty() || low == "endbfrange") {
@@ -284,7 +330,8 @@ void CPDF_ToUnicodeMap::Load(CPDF_Stream* pStream) {
             }
           }
         }
-      }
+#endif
+      } // while( bfrange )
     } else if (word == "/Adobe-Korea1-UCS2") {
       cid_set = CIDSET_KOREA1;
     } else if (word == "/Adobe-Japan1-UCS2") {
@@ -297,9 +344,9 @@ void CPDF_ToUnicodeMap::Load(CPDF_Stream* pStream) {
   }
   if (cid_set) {
     m_pBaseMap = CPDF_ModuleMgr::Get()
-                     ->GetPageModule()
-                     ->GetFontGlobals()
-                     ->m_CMapManager.GetCID2UnicodeMap(cid_set, FALSE);
+        ->GetPageModule()
+        ->GetFontGlobals()
+        ->m_CMapManager.GetCID2UnicodeMap(cid_set, FALSE);
   } else {
     m_pBaseMap = nullptr;
   }
